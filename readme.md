@@ -69,23 +69,20 @@ The project is organized into the following main components:
 
 ## Implementation Details
 
-1. **Server Setup (`server.js`)**
+1. **Server Setup (`app.js`)**
    - Configures the Express.js server and middleware.
    - Connects to MongoDB using Mongoose.
    - Sets up session management and authentication.
 
 2. **Models**
-   - **User Model (`models/User.js`)**: Defines the schema for storing user information, including username and hashed password.
-   - **Feedback Model (`models/Feedback.js`)**: Defines the schema for storing feedback, complaints, and anti-ragging reports, including the type of feedback, content, and user reference.
+   - **User Model (`schema/User.js`)**: Defines the schema for storing user information, including username and hashed password.
+   - **Feedback Model (`schema/data.js`)**: Defines the schema for storing feedback, complaints, and anti-ragging reports, including the type of feedback, content, and user reference.
 
 3. **Routes**
    - **Authentication Routes (`routes/auth.js`)**: Manages user registration, login, and logout. This ensures that users can securely create accounts and access the portal.
-   - **Feedback Routes (`routes/feedback.js`)**: Manages submission and retrieval of feedback, complaints, and anti-ragging reports. This allows students to submit their feedback and faculty to review it.
+   - **Feedback Routes (`routes/main.js`)**: Manages submission and retrieval of feedback, complaints, and anti-ragging reports. This allows students to submit their feedback and faculty to review it.
 
-4. **Middleware**
-   - **Authentication Middleware (`middlewares/auth.js`)**: Ensures that routes requiring authentication are protected. This middleware checks for valid JWT tokens and grants access accordingly.
-
-5. **Environment Variables**
+4. **Environment Variables**
    - **Configuration**: Stores sensitive configuration settings such as database URI and secret keys in a `.env` file. This ensures that these settings are not hard-coded into the application and can be easily managed and secured.
 
 ## Conclusion
